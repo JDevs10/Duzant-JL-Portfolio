@@ -1,0 +1,29 @@
+
+.contactForm{
+    text-align: left;
+}
+
+section div{
+    height: 100%;
+}
+
+.box{
+    width: 50%;
+}
+
+.google-map-card{
+    padding: 20px;
+}
+
+iframe{
+    height: 340px;
+    width: 100%;
+}
+
+input[type='text']{
+    width: 70%;
+}
+
+textarea{
+    width: 70%;
+}
