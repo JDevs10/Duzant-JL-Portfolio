@@ -3,7 +3,7 @@
 }
 
 .navbar-setup i{
-    color: red;
+    color: black;
 }
 
 .navbar-setup a{
@@ -20,4 +20,5 @@ div#made-by{
 
 #made-by li{
     list-style-type: none;
+    text-align: center;
 }
