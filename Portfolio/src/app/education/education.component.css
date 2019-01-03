@@ -1,0 +1,13 @@
+section#education{
+    margin: 150px auto;
+}
+
+section#education h2{
+    color: white;
+}
+
+section#education .resumeBody-txt{
+    margin: 25px 10px 75px 10px;
+    padding: 0;
+    color: white;
+}
