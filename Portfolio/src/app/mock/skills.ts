@@ -1,6 +1,6 @@
 export class Skills{
     id: Number;
     name: String;
-    percentage: Number;
+    percentage: String;
     category: String;
 }
