@@ -3,4 +3,5 @@ export class Project {
     title: String;
     text: String;
     workLink: String;
+    type: String;
   }

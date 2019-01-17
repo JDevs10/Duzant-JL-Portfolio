@@ -6,3 +6,8 @@ section#myprojects{
 section#myprojects h1{
     color: white;
 }
+
+section#myprojects .project-type{
+    width: 58%;
+    text-align: right;
+}
