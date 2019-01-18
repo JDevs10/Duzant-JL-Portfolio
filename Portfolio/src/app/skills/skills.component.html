@@ -19,11 +19,11 @@
       <div id="skill-framework" class="skill-mode">
         <div class="skill" *ngFor="let skill of skills;">
             <h4>{{skill.name}}</h4>
-            <br>
             <div class="progress" style="height: 20px;">
               <div name="divtest" class="skill_div progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar"
                 aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width': skill.percentage }"></div>
             </div>
+            <br>
         </div>
       </div>
     </div>

@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class EducationService {
 
-  private url = 'http://localhost/MyPortfolio-V-Angular/Silex-Symfony/web/index.php';
+  private url = 'http://localhost/JL-Portfolio-Angular/Symfony-API/public';
 
   constructor(private http: HttpClient) { }
 

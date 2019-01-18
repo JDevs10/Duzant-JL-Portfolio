@@ -1,6 +1,6 @@
 export class Education{
     id: Number;
-    schoolName: String;
+    name: String;
     diplomaName: String;
     period: String;
     address: String;

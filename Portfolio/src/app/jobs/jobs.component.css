@@ -1,4 +1,8 @@
 section#jobs{
     margin: 100px auto;
-    color: white;
+    color: black;
+}
+
+section#jobs h1{
+    color: white
 }
