@@ -1,12 +1,12 @@
-<nav class="navbar navbar-setup">
+<nav class="navbar navbar-setup fixed-top">
     <a class="navbar-brand" routerLink="/loginSignIn">JDevs</a>
 
     <div class="topnav" id="myTopnav">
-      <a class="nav-item nav-link active" routerLink="/wall">Home</a>
-      <a class="nav-item nav-link" href="#">Skills</a>
-      <a class="nav-item nav-link" href="#">Education</a>
-      <a class="nav-item nav-link" href="#">My Projects</a>
-      <a class="nav-item nav-link" href="#">Contact</a>
+      <a id="navHome" class="nav-item nav-link active" href="#home" (click)="currentActive('Home')">Home</a>
+      <a id="navSkills" class="nav-item nav-link" href="#skills" (click)="currentActive('Skills')">Skills</a>
+      <a id="navEducation" class="nav-item nav-link" href="#education" (click)="currentActive('Education')">Education</a>
+      <a id="navProjects" class="nav-item nav-link" href="#myprojects" (click)="currentActive('Projects')">My Projects</a>
+      <a id="navContact" class="nav-item nav-link" href="#contact" (click)="currentActive('Contact')">Contact</a>
       <a href="javascript:void(0);" style="font-size:20px;" class="icon" (click)="myFunction()"><i class="fa fa-bars"></i></a>
     </div>
   </nav>

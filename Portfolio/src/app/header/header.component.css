@@ -1,5 +1,6 @@
 .navbar-setup{
     background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    z-index: 10;
 }
 
 .navbar-setup a{
