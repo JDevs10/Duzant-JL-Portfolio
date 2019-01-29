@@ -1,5 +1,7 @@
 <nav class="navbar navbar-setup fixed-top">
-    <a class="navbar-brand" routerLink="/loginSignIn">JDevs</a>
+    <a class="navbar-brand" routerLink="/Welcome">
+      <img class="web-img-icon-t" src="assets/favicon.ico" alt="JDevs-ico">
+    </a>
 
     <div class="topnav" id="myTopnav">
       <a href="">&nbsp;</a>
@@ -8,7 +10,6 @@
       <a id="navEducation" class="nav-item nav-link" href="#education" (click)="currentActive('Education')">Education</a>
       <a id="navProjects" class="nav-item nav-link" href="#myprojects" (click)="currentActive('Projects')">My Projects</a>
       <a id="navContact" class="nav-item nav-link" href="#contact" (click)="currentActive('Contact')">Contact</a>
-      <a id="navAdmin-login" class="nav-item nav-link" href="/admin_log"><i class="fas fa-unlock-alt fa-lg"></i></a>
       <a href="javascript:void(0);" style="font-size:20px;" class="icon" (click)="myFunction()"><i class="fa fa-bars"></i></a>
     </div>
   </nav>

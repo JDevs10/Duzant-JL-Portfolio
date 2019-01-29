@@ -3,6 +3,13 @@
     z-index: 10;
 }
 
+.web-img-icon-t{
+  height: 125px;
+  width: 125px;
+  position: absolute;
+  top: -0.025px;
+}
+
 .navbar-setup a{
     color: white;
 }

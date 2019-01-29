@@ -2,6 +2,13 @@
     background: -webkit-linear-gradient(left, #3931af, #00c6ff);
 }
 
+.web-img-icon-b{
+    height: 125px;
+    width: 125px;
+    position: absolute;
+    bottom: -0.025px;
+  }
+
 .navbar-setup i{
     color: black;
 }
