@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeService } from '../home.service';
+import { Random } from '../mock/random';
+import { timeout } from 'q';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +10,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  randomN: Random;
+
+  constructor(private homeService: HomeService) { }
 
   ngOnInit() {
+  }
+
+  AdminAuthentification(){
+    // generate a random 32 digits
+    let randomStringLength = Math.floor(Math.random()*90)+22;
+
+    let possibleSmallLetters = "abcdefghijklmnopqrstuvwxyz";
+    let possibleBigLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let possibleNumbers = "0123456789";
+    let s = "'\'";
+    let possibleSymbols = "~!@#$%&*()_+-={}|[]"+s+";:<>?,./";
+    var text = "";
+    var possible = possibleSmallLetters+possibleBigLetters+possibleNumbers+possibleSymbols;
+
+    for (var i = 0; i < randomStringLength; i++){
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+
+    this.homeService.sendAdminRandom(text).subscribe(random => this.randomN = random);
+
+    setTimeout(()=>{
+      alert("here : "+this.randomN.notification);
+    }, 3000);
+
   }
 
   myFunction() {
