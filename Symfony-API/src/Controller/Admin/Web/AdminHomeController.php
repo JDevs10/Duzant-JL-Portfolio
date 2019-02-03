@@ -17,7 +17,7 @@ class AdminHomeController extends AbstractController{
     /**
      * @Route("/home", name="home_admin")
      */
-    public function login(Request $request){
+    public function home(Request $request){
         // show tables of each database table data
 
         return $this->render('Admin/home.html.twig');
