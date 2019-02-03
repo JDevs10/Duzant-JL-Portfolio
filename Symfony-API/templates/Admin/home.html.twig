@@ -1,11 +1,273 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<h1> Welcome Admin to your Portfolio Manager Home</h1>
+<h1 class="text-center p-5"> Welcome {{app.user.email}} to your Portfolio Manager Home</h1>
 
-{% if app.user != null %}
-    {{dump(app.user)}}
-    <a href="http://localhost/JL-Portfolio-Angular/Symfony-API/public/logout">Logout !!!</a>
-{% endif %}
+<div class="text-center p-3">
+    <div style="width: 100%;">
+
+    <div class="row">
+        <div style="margin: auto;">
+            <h3>Home bodies</h3>
+        </div>
+        <div class="mr-3">
+            <a class="btn bg-success" href="/JL-Portfolio-Angular/Symfony-API/public/admin/home/new_body"><i class="fas fa-plus"></i> Add Body</a>
+        </div>
+    </div>
+
+    <table class="table">
+    <thead class="thead-dark">
+        <tr>
+        <th scope="col" style="width: 2%;">#</th>
+        <th scope="col" style="width: 22%;">Home body</th>
+        <th scope="col" style="width: 22%;">Resume body</th>
+        <th scope="col" style="width: 22%;">Work body</th>
+        <th scope="col" style="width: 22%;">Contact body</th>
+        <th scope="col" style="width: 10%;">Action</th>
+        </tr>
+    </thead>
+    {% for body in bodies %}
+    <tbody>
+        <tr>
+        <th scope="row">{{body.id}}</th>
+        <td> {{body.homebody}} </td>
+        <td> {{body.resumebody}} </td>
+        <td> {{body.workbody}} </td>
+        <td> {{body.contactbody}} </td>
+        <td><a class="btn bg-primary" href=""><i class="far fa-edit"></i></a>
+            <a class="btn bg-danger" href=""><i class="far fa-trash-alt"></i></a></td>
+        </tr>
+    </tbody>
+    {% endfor %}
+    {% if bodies == null %}
+        <tbody>
+        <tr>
+        <th scope="row">????</th>
+        <td>No data to be loaded... </td>
+        <td>No data to be loaded... </td>
+        <td>No data to be loaded... </td>
+        <td>No data to be loaded... </td>
+        <td><a class="btn bg-primary" href="???????"><i class="far fa-question-circle"></i></a>
+            <a class="btn bg-danger" href="???????"><i class="far fa-question-circle"></i></td>
+        </tr>
+    </tbody>
+    {% endif %}
+    </table>
+    </div>
+
+    <div class="row mt-5 mb-5 ml-1">
+        <div style="width: 42%;">
+        
+        <div class="row">
+            <div style="margin: auto;">
+                <h3>Skill section</h3>
+            </div>
+            <div class="mr-3">
+                <a class="btn bg-success" href="/JL-Portfolio-Angular/Symfony-API/public/admin/home/newSkill"><i class="fas fa-plus"></i> Add Skill</a>
+            </div>
+        </div>
+
+        <table class="table">
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col" style="width: 2%;">#</th>
+            <th scope="col" style="width: 5%;">Name</th>
+            <th scope="col" style="width: 5%;">Percentage</th>
+            <th scope="col" style="width: 5%;">Category</th>
+            <th scope="col" style="width: 15%;">Action</th>
+            </tr>
+        </thead>
+        {% for skill in skills %}
+        <tbody>
+            <tr>
+            <th scope="row">{{skill.id}}</th>
+            <td>{{skill.name}}</td>
+            <td>{{skill.percentage}}</td>
+            <td>{{skill.category}}</td>
+            <td><a class="btn bg-primary" href=""><i class="far fa-edit"></i></a>
+                <a class="btn bg-danger" href=""><i class="far fa-trash-alt"></i></a></td>
+            </tr>
+        </tbody>
+        {% endfor %}
+        {% if skills == null %}
+        <tbody>
+            <tr>
+            <th scope="row">????</th>
+            <td>No data to be loaded... </td>
+            <td>No data to be loaded... </td>
+            <td>No data to be loaded... </td>
+            <td><a class="btn bg-primary" href="???????"><i class="far fa-question-circle"></i></a>
+                <a class="btn bg-danger" href="???????"><i class="far fa-question-circle"></i></td>
+            </tr>
+        </tbody>
+        {% endif %}
+        </table>
+        </div>
+
+        <div style="width: 57%;">
+        
+        <div class="row">
+            <div style="margin: auto;">
+                <h3>Education section</h3>
+            </div>
+            <div class="mr-3">
+                <a class="btn bg-success" href="/JL-Portfolio-Angular/Symfony-API/public/admin/home/newDiploma"><i class="fas fa-plus"></i> Add Diploma</a>
+            </div>
+        </div>
+        
+
+        <table class="table">
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col" style="width: 2%;">#</th>
+            <th scope="col" style="width: 26%;">Name</th>
+            <th scope="col" style="width: 20%;">Diploma name</th>
+            <th scope="col" style="width: 15%;">Period</th>
+            <th scope="col" style="width: 5%;">Address</th>
+            <th scope="col" style="width: 17%;">Action</th>
+            </tr>
+        </thead>
+        {% for school in schools %}
+        <tbody>
+            <tr>
+            <th scope="row">{{school.id}}</th>
+            <td>{{school.name}}</td>
+            <td>{{school.diplomaname}}</td>
+            <td>{{school.period}}</td>
+            <td>{{school.address}}</td>
+            <td><a class="btn bg-primary" href=""><i class="far fa-edit"></i></a>
+                <a class="btn bg-danger" href=""><i class="far fa-trash-alt"></i></a></td>
+            </tr>
+        </tbody>
+        {% endfor %}
+        {% if schools == null %}
+        <tbody>
+            <tr>
+            <th scope="row">????</th>
+            <td>No data to be loaded... </td>
+            <td>No data to be loaded... </td>
+            <td>No data to be loaded... </td>
+            <td>No data to be loaded... </td>
+            <td><a class="btn bg-primary" href="???????"><i class="far fa-question-circle"></i></a>
+                <a class="btn bg-danger" href="???????"><i class="far fa-question-circle"></i></td>
+            </tr>
+        </tbody>
+        {% endif %}
+        </table>
+        </div>
+
+        </div>
+    </div>
+
+    <div class="p-3" style="width: 100%;">
+        
+        <div class="row">
+            <div style="margin: auto;">
+                <h3>Job section</h3>
+            </div>
+            <div class="mr-3">
+                <a class="btn bg-success" href="/JL-Portfolio-Angular/Symfony-API/public/admin/home/newJob"><i class="fas fa-plus"></i> Add Job</a>
+            </div>
+        </div>
+
+        <table class="table">
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col" style="width: 2%;">#</th>
+            <th scope="col" style="width: 10%;">Title</th>
+            <th scope="col" style="width: 10%;">Name</th>
+            <th scope="col" style="width: 10%;">link</th>
+            <th scope="col" style="width: 25%;">The mission</th>
+            <th scope="col" style="width: 15%;">Address</th>
+            <th scope="col" style="width: 10%;">Period</th>
+            <th scope="col" style="width: 10%;">Action</th>
+            </tr>
+        </thead>
+        {% for job in jobs %}
+        <tbody>
+            <tr>
+            <th scope="row">{{job.id}}</th>
+            <td>{{job.title}}</td>
+            <td>{{job.name}}</td>
+            <td>{{job.link}}</td>
+            <td>{{job.themission}}</td>
+            <td>{{job.address}}</td>
+            <td>{{job.period}}</td>
+            <td><a class="btn bg-primary" href=""><i class="far fa-edit"></i></a>
+                <a class="btn bg-danger" href=""><i class="far fa-trash-alt"></i></a></td>
+            </tr>
+        </tbody>
+        {% endfor %}
+        {% if jobs == null %}
+        <tbody>
+            <tr>
+            <th scope="row">????</th>
+            <td>No data to be loaded... </td>
+            <td>No data to be loaded... </td>
+            <td>No data to be loaded... </td>
+            <td>No data to be loaded... </td>
+            <td>No data to be loaded... </td>
+            <td>No data to be loaded... </td>
+            <td><a class="btn bg-primary" href="???????"><i class="far fa-question-circle"></i></a>
+                <a class="btn bg-danger" href="???????"><i class="far fa-question-circle"></i></td>
+            </tr>
+        </tbody>
+        {% endif %}
+        </table>
+        </div>
+
+        <div class="p-3" style="width: 100%;">
+        
+        <div class="row">
+            <div style="margin: auto;">
+                <h3>Projects section</h3>
+            </div>
+            <div class="mr-3">
+                <a class="btn bg-success" href="/JL-Portfolio-Angular/Symfony-API/public/admin/home/newProject"><i class="fas fa-plus"></i> Add Project</a>
+            </div>
+        </div>
+
+        <table class="table">
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col" style="width: 2%;">#</th>
+            <th scope="col" style="width: 10%;">Title</th>
+            <th scope="col" style="width: 40%;">Text</th>
+            <th scope="col" style="width: 10%;">Link</th>
+            <th scope="col" style="width: 10%;">Date</th>
+            <th scope="col" style="width: 2%;">Type</th>
+            <th scope="col" style="width: 10%;">Action</th>
+            </tr>
+        </thead>
+        {% for work in works %}
+        <tbody>
+            <tr>
+            <th scope="row">{{work.id}}</th>
+            <td>{{work.title}}</td>
+            <td>{{work.text}}</td>
+            <td>{{work.worklink}}</td>
+            <td>{{work.date|date('d/m/Y')}}</td>
+            <td><i class="{{work.type}}"></i></td>
+            <td><a class="btn bg-primary" href=""><i class="far fa-edit"></i></a>
+                <a class="btn bg-danger" href=""><i class="far fa-trash-alt"></i></a></td>
+            </tr>
+        </tbody>
+        {% endfor %}
+        {% if works == null %}
+        <tbody>
+            <tr>
+            <th scope="row">????</th>
+            <td>No data to be loaded... </td>
+            <td>No data to be loaded... </td>
+            <td>No data to be loaded... </td>
+            <td>No data to be loaded... </td>
+            <td>No data to be loaded... </td>
+            <td><a class="btn bg-primary" href="???????"><i class="far fa-question-circle"></i></a>
+                <a class="btn bg-danger" href="???????"><i class="far fa-question-circle"></i></td>
+            </tr>
+        </tbody>
+        {% endif %}
+        </table>
+</div>
 
 {% endblock %}
