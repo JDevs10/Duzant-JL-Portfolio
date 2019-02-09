@@ -53,5 +53,48 @@ class AdminHomeController extends AbstractController{
             "works" => $works
         ));
     }
+
+    /**
+     * @Route("/home/{new}", name="addNew_admin")
+     */
+    public function addnew($new){
+        if($new == "new_body"){
+
+            $repository = $this->getDoctrine()->getRepository(Bodies::class);
+            $body = $repository->find(1);
+
+            if($body == null && $body != 1){  $body = new Bodies();   }
+            
+            $form = $this->createFormBuilder($body)
+                ->add('Home body', TextareaType::class)
+                ->add('Resume body', TextareaType::class)
+                ->add('Work body', TextareaType::class)
+                ->add('Contact body', TextareaType::class)
+                ->add('Save', SubmitType::class, array('label' => 'Save'))
+                ->getForm();
+            $form->handleRequest($request);
+
+            if ($form->isSubmitted()) {
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($body);
+                $entityManager->flush();
+        
+                return $this->redirectToRoute('home_admin');
+            }
+
+            return $this->render('Admin/new.html.twig', array(
+                'form' => $form->createView()
+            ));
+        }
+
+        // if($new == "newSkill"){
+
+        // }
+
+        // return $this->render('Admin/new.html.twig', array(
+        //     'form' => $form->createView()
+        // ));
+
+    }
         
 }
