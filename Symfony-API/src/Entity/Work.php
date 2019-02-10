@@ -102,12 +102,12 @@ class Work
         return $this->date;
     }
 
-    public function setDate(\DateTimeInterface $date): self
-    {
-        $this->date = $date;
+    // public function setDate(\DateTimeInterface $date): self
+    // {
+    //     $this->date = $date;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
     public function getType(): ?string
     {

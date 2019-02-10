@@ -1,5 +1,45 @@
+{% extends 'base.html.twig' %}
+
 {% block body %}
-    <h1>Hello from new</h1>
+    {% if status == "new body"%}
+        <h1 class="text-center p-5">Add bodies</h1>
+    {% endif %}
+
+    {% if status == "edit body" %} 
+        <h1 class="text-center p-5">Update All the bodies</h1>
+    {% endif %}
+
+    {% if status == "add skill" %} 
+        <h1 class="text-center p-5">Add your new Skill</h1>
+    {% endif %}
+
+    {% if status == "edit skill" %} 
+        <h1 class="text-center p-5">Edit your Skill</h1>
+    {% endif %}
+
+    {% if status == "add school" %} 
+        <h1 class="text-center p-5">Add your new School</h1>
+    {% endif %}
+
+    {% if status == "edit school" %} 
+        <h1 class="text-center p-5">Edit your School</h1>
+    {% endif %}
+    
+    {% if status == "add job" %} 
+        <h1 class="text-center p-5">Add your new Job</h1>
+    {% endif %}
+
+    {% if status == "edit job" %} 
+        <h1 class="text-center p-5">Edit your Job</h1>
+    {% endif %}
+
+    {% if status == "add project" %} 
+        <h1 class="text-center p-5">Add your new Project</h1>
+    {% endif %}
+
+    {% if status == "edit project" %} 
+        <h1 class="text-center p-5">Edit your Project</h1>
+    {% endif %}
     <br>
     {{ form_start(form) }}
     {{ form_widget(form) }}

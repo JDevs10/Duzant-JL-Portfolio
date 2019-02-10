@@ -11,7 +11,7 @@
             <h3>Home bodies</h3>
         </div>
         <div class="mr-3">
-            <a class="btn bg-success" href="/JL-Portfolio-Angular/Symfony-API/public/admin/home/new_body"><i class="fas fa-plus"></i> Add Body</a>
+            <a class="btn bg-success" href="/JL-Portfolio-Angular/Symfony-API/public/admin/home/home-bodies/new"><i class="fas fa-plus"></i> Add Body</a>
         </div>
     </div>
 
@@ -34,8 +34,8 @@
         <td> {{body.resumebody}} </td>
         <td> {{body.workbody}} </td>
         <td> {{body.contactbody}} </td>
-        <td><a class="btn bg-primary" href=""><i class="far fa-edit"></i></a>
-            <a class="btn bg-danger" href=""><i class="far fa-trash-alt"></i></a></td>
+        <td><a class="btn bg-primary" href="home/home-bodies/edit/{{body.id}}"><i class="far fa-edit"></i></a>
+            <a class="btn bg-danger" href="home/home-bodies/delete/{{body.id}}"><i class="far fa-trash-alt"></i></a></td>
         </tr>
     </tbody>
     {% endfor %}
@@ -63,7 +63,7 @@
                 <h3>Skill section</h3>
             </div>
             <div class="mr-3">
-                <a class="btn bg-success" href="/JL-Portfolio-Angular/Symfony-API/public/admin/home/newSkill"><i class="fas fa-plus"></i> Add Skill</a>
+                <a class="btn bg-success" href="/JL-Portfolio-Angular/Symfony-API/public/admin/home/skill/add"><i class="fas fa-plus"></i> Add Skill</a>
             </div>
         </div>
 
@@ -84,8 +84,8 @@
             <td>{{skill.name}}</td>
             <td>{{skill.percentage}}</td>
             <td>{{skill.category}}</td>
-            <td><a class="btn bg-primary" href=""><i class="far fa-edit"></i></a>
-                <a class="btn bg-danger" href=""><i class="far fa-trash-alt"></i></a></td>
+            <td><a class="btn bg-primary" href="home/skill/edit/{{skill.id}}"><i class="far fa-edit"></i></a>
+                <a class="btn bg-danger" href="home/skill/delete/{{skill.id}}"><i class="far fa-trash-alt"></i></a></td>
             </tr>
         </tbody>
         {% endfor %}
@@ -111,7 +111,7 @@
                 <h3>Education section</h3>
             </div>
             <div class="mr-3">
-                <a class="btn bg-success" href="/JL-Portfolio-Angular/Symfony-API/public/admin/home/newDiploma"><i class="fas fa-plus"></i> Add Diploma</a>
+                <a class="btn bg-success" href="/JL-Portfolio-Angular/Symfony-API/public/admin/home/education/add"><i class="fas fa-plus"></i> Add Diploma</a>
             </div>
         </div>
         
@@ -135,8 +135,8 @@
             <td>{{school.diplomaname}}</td>
             <td>{{school.period}}</td>
             <td>{{school.address}}</td>
-            <td><a class="btn bg-primary" href=""><i class="far fa-edit"></i></a>
-                <a class="btn bg-danger" href=""><i class="far fa-trash-alt"></i></a></td>
+            <td><a class="btn bg-primary" href="home/education/edit/{{school.id}}"><i class="far fa-edit"></i></a>
+                <a class="btn bg-danger" href="home/education/delete/{{school.id}}"><i class="far fa-trash-alt"></i></a></td>
             </tr>
         </tbody>
         {% endfor %}
@@ -166,7 +166,7 @@
                 <h3>Job section</h3>
             </div>
             <div class="mr-3">
-                <a class="btn bg-success" href="/JL-Portfolio-Angular/Symfony-API/public/admin/home/newJob"><i class="fas fa-plus"></i> Add Job</a>
+                <a class="btn bg-success" href="/JL-Portfolio-Angular/Symfony-API/public/admin/home/job/add"><i class="fas fa-plus"></i> Add Job</a>
             </div>
         </div>
 
@@ -193,8 +193,8 @@
             <td>{{job.themission}}</td>
             <td>{{job.address}}</td>
             <td>{{job.period}}</td>
-            <td><a class="btn bg-primary" href=""><i class="far fa-edit"></i></a>
-                <a class="btn bg-danger" href=""><i class="far fa-trash-alt"></i></a></td>
+            <td><a class="btn bg-primary" href="home/job/edit/{{job.id}}"><i class="far fa-edit"></i></a>
+                <a class="btn bg-danger" href="home/job/delete/{{job.id}}"><i class="far fa-trash-alt"></i></a></td>
             </tr>
         </tbody>
         {% endfor %}
@@ -223,7 +223,7 @@
                 <h3>Projects section</h3>
             </div>
             <div class="mr-3">
-                <a class="btn bg-success" href="/JL-Portfolio-Angular/Symfony-API/public/admin/home/newProject"><i class="fas fa-plus"></i> Add Project</a>
+                <a class="btn bg-success" href="/JL-Portfolio-Angular/Symfony-API/public/admin/home/project/add"><i class="fas fa-plus"></i> Add Project</a>
             </div>
         </div>
 
@@ -248,8 +248,8 @@
             <td>{{work.worklink}}</td>
             <td>{{work.date|date('d/m/Y')}}</td>
             <td><i class="{{work.type}}"></i></td>
-            <td><a class="btn bg-primary" href=""><i class="far fa-edit"></i></a>
-                <a class="btn bg-danger" href=""><i class="far fa-trash-alt"></i></a></td>
+            <td><a class="btn bg-primary" href="home/project/edit/{{work.id}}"><i class="far fa-edit"></i></a>
+                <a class="btn bg-danger" href="home/project/delete/{{work.id}}"><i class="far fa-trash-alt"></i></a></td>
             </tr>
         </tbody>
         {% endfor %}
