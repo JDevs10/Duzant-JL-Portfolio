@@ -6,6 +6,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 
+use App\Entity\Notification;
 
 class EmailAdminController extends AbstractController{
 
@@ -37,7 +38,19 @@ class EmailAdminController extends AbstractController{
             $msg = "Ops something went wrong ... Error: 500";
         }
 
+        $notif = new Notification();
+        $notif->setMsg($msg);
+    }
+
+    /**
+     * @Route("api/admin/notification", name="adminEmailNotification_admin")
+     */
+    public function adminEmailNotification(){
         // redirect
-        return new JsonResponse(["notification" => $msg]);
+        $notif = new Notification();
+        $str = $notif->getMsg();
+        if($str == ""){$str = "Error : Variable Nothing !!!";}
+
+        return new JsonResponse(["notification" => $str]);
     }
 }

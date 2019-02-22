@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../home.service';
-import { Random } from '../mock/random';
+//import { Random } from '../mock/random';
 import { timeout } from 'q';
 
 @Component({
@@ -10,13 +10,14 @@ import { timeout } from 'q';
 })
 export class HeaderComponent implements OnInit {
 
-  randomN: Random;
+  //randomN: Random;
 
   constructor(private homeService: HomeService) { }
 
   ngOnInit() {
   }
 
+  /*
   AdminAuthentification(){
     // generate a random 32 digits
     let randomStringLength = Math.floor(Math.random()*90)+22;
@@ -36,10 +37,11 @@ export class HeaderComponent implements OnInit {
     this.homeService.sendAdminRandom(text).subscribe(random => this.randomN = random);
 
     setTimeout(()=>{
+      this.homeService.getAdminNotification().subscribe(random => this.randomN = random);
       alert("here : "+this.randomN.notification);
     }, 3000);
 
-  }
+  }*/
 
   myFunction() {
     var x = document.getElementById("myTopnav");
