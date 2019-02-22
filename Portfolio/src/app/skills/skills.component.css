@@ -1,4 +1,4 @@
-#home{
+#Accueil{
     background: url("../../assets/header-bg.jpeg")  no-repeat bottom center scroll;
     background-size: auto;
 
@@ -8,17 +8,17 @@
     text-align: center;
 }
 
-#home h1{
+#Accueil h1{
     font-size: 50px;
     text-transform: uppercase;
     color: white;
 }
 
-#home p{
+#Accueil p{
     color: white;
 }
 
-#skills{
+#Mes-Compétences{
     color: white;
     padding-top: 125px;
 }
